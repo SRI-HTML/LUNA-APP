@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* ======================= NAVIGATION BAR ======================= */}
+       
         <nav>
           <div className="logo">🌙 Luna</div>
           <div className="nav-links">
@@ -24,34 +24,25 @@ function App() {
             <Link to="/mood">Mood</Link>
             <Link to="/quotes">Quotes</Link>
 
-            {/*
-              VVVVVVVVVVVVVVVVVVVVV THIS IS THE LINE WE ARE CHANGING VVVVVVVVVVVVVVVVVVVVV
-              We are replacing the <button> element with a <Link> component.
-              - `to="/register"` tells the link where to navigate.
-              - `className="get-started"` makes sure it still looks exactly like the purple button.
-            */}
+            
             <Link to="/register" className="get-started">Get Started</Link>
-            {/*
-              AAAAAAAAAAAAAAAAAAAAA END OF THE CHANGE AAAAAAAAAAAAAAAAAAAAA
-            */}
+           
           </div>
         </nav>
 
-        {/* ======================= MAIN CONTENT & ROUTING ======================= */}
-        {/* This is where the different pages are rendered based on the URL */}
+       
         <main>
           <Routes>
-            {/* Standard Page Routes */}
+           
             <Route path="/" element={<HomePage />} />
             <Route path="/chat" element={<ChatPage />} />
             <Route path="/mood" element={<MoodTrackerPage />} />
             <Route path="/quotes" element={<QuotesPage />} />
 
-            {/* --- Add the Routes for our new pages --- */}
-            {/* When the URL is '/register', show the RegistrationPage component */}
+           
             <Route path="/register" element={<RegistrationPage />} />
             
-            {/* When the URL is '/login', show the LoginPage component */}
+           
             <Route path="/login" element={<LoginPage />} />
           </Routes>
         </main>

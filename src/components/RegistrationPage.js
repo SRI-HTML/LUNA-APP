@@ -24,8 +24,11 @@ const RegistrationPage = () => {
         } catch (error) {
             // If the backend returns an error (e.g., user already exists), axios will throw an error
             // We can display the error message from the backend to the user.
-            console.error('Registration failed:', error.response.data.message);
-            alert(`Registration failed: ${error.response.data.message}`);
+            console.error('Registration failed:', error.response ? error.response.data.message : error.message);
+            
+            // VVVVV THIS IS THE CORRECTED LINE VVVVV
+            alert(`Registration failed: ${error.response ? error.response.data.message : error.message}`);
+            // ^^^^^ THE INCORRECT BACKSLASH IS NOW REMOVED ^^^^^
         }
     };
 
@@ -46,11 +49,11 @@ const RegistrationPage = () => {
                     {errors.email && <p className="error">{errors.email.message}</p>}
                 </div>
 
-                <div className="form-group">
+                <div className="form-group">.
                     <label>Password</label>
                     <input
                         type="password"
-                        {...register('password', { required: 'Password is required' })}
+                        {...register('password', { required: 'Name is required' })}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <PasswordStrengthMeter password={password} />

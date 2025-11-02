@@ -12,7 +12,7 @@ app.use(express.json());
 
 // VVVVVVVVVVVVVVVVVVVVVVV THIS IS THE PART WE ARE FIXING VVVVVVVVVVVVVVVVVVVVVVVVVV
 
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URI_V2;
 
 // We are removing the old, unnecessary options.
 // This is the modern, correct way to connect.
